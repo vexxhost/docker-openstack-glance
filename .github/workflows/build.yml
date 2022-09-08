@@ -43,9 +43,10 @@ jobs:
           RELEASE=${{ matrix.release }}
           PROJECT=glance
           PROJECT_REF=${{ env.PROJECT_REF }}
+          EXTRAS=
           PROFILES=ceph
           DIST_PACKAGES=kubectl
-          PIP_PACKAGES=python-cinderclient os-brick
+          PIP_PACKAGES=glance_store[cinder]
         cache-from: type=gha,scope=${{ matrix.release }}
         cache-to: type=gha,mode=max,scope=${{ matrix.release }}
         context: .
