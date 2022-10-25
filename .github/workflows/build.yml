@@ -48,7 +48,7 @@ jobs:
           EXTRAS=
           PROFILES=ceph
           DIST_PACKAGES=kubectl lsscsi nvme-cli sysfsutils udev util-linux
-          PIP_PACKAGES=glance_store[cinder]
+          PIP_PACKAGES=cryptography glance_store[cinder]
         cache-from: type=gha,scope=${{ matrix.release }}
         cache-to: type=gha,mode=max,scope=${{ matrix.release }}
         context: .
